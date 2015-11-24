@@ -1,0 +1,6 @@
+MAILTO=""
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+SHELL=/bin/bash
+
+# Look for and purge old sessions every 30 minutes
+09,39 * * * * [ -x /usr/lib/php5/sessionclean ] && [ -d /data/tmp/session ] && /usr/lib/php5/sessionclean /data/tmp/session 30

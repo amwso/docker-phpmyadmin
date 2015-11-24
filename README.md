@@ -1,1 +1,3 @@
-# docker-phpmyadmin
+PHPMyAdmin in Docker
+======
+

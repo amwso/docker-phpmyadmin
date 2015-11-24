@@ -1,0 +1,16 @@
+/data/var/log/nginx/*.log {
+	daily
+	missingok
+	rotate 60
+	compress
+	delaycompress
+	ifempty
+	create 0640 root root
+	dateyesterday
+	dateext
+	dateformat -%Y-%m-%d
+	sharedscripts
+	postrotate
+		[ -s /data/var/log/nginx/nginx.pid ] && kill -USR1 `cat /data/var/log/nginx/nginx.pid`
+	endscript
+}

@@ -1,0 +1,14 @@
+server {
+    include nginx_site_listen_port.conf;
+    server_name "";
+
+    location / {
+        default_type 'text/html';
+        content_by_lua '
+            ngx.status = 400
+            ngx.say("<h1>Bad Request (Invalid Hostname)</h1>")
+            ngx.exit(ngx.OK)
+        ';
+    }
+}
+

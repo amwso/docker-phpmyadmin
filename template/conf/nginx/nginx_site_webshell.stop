@@ -1,0 +1,7 @@
+location = /shell.php {
+    root /data/conf/webshell;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_intercept_errors off;
+    fastcgi_param   SERVER_NAME $host;
+    fastcgi_pass    unix:/data/var/run/php-fpm/php5-fpm.sock;
+}

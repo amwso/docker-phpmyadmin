@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/root
+LOGNAME=root
+
+1	1	cron.daily	run-parts --report /data/conf/cron.daily
+7	5	cron.weekly	run-parts --report /data/conf/cron.weekly
+@monthly	15	cron.monthly	run-parts --report /data/conf/cron.monthly
